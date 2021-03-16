@@ -57,28 +57,30 @@ window.addEventListener('load', event => {
       //on retroune la carte
       card.classList.toggle('turned')
       
-      //on l'ajoute dans l'array pickedCard
-      memoryGame.pickedCards.push(card);
+      setTimeout(function(){
+        //on l'ajoute dans l'array pickedCard
+        memoryGame.pickedCards.push(card);
 
-      //si cette array contien 2 elements
-      if (memoryGame.pickedCards.length === 2){
-      let card1 = memoryGame.pickedCards[0].dataset.cardName;
-      let card2 = memoryGame.pickedCards[1].dataset.cardName;
-      let result = memoryGame.checkIfPair(card1, card2)  
+        //si cette array contien 2 elements
+        if (memoryGame.pickedCards.length === 2){
+        let card1 = memoryGame.pickedCards[0].dataset.cardName;
+        let card2 = memoryGame.pickedCards[1].dataset.cardName;
+        let result = memoryGame.checkIfPair(card1, card2)  
 
-      //on change la classs selon le resultat de checkIfPair (si c true , turned reste, sinon turned s'en va)
-      card.classList.toggle('turned', result);
-      memoryGame.pickedCards[0].classList.toggle('turned', result);
+        //on change la classs selon le resultat de checkIfPair (si c true , turned reste, sinon turned s'en va)
+        card.classList.toggle('turned', result);
+        memoryGame.pickedCards[0].classList.toggle('turned', result);
 
-      //on vide l'array 
-      memoryGame.pickedCards.length = 0;
-      } 
-      
+       //on vide l'array 
+        memoryGame.pickedCards.length = 0;
+        };
+        }, 1000);
+
       console.log(`Card clicked: ${card.dataset.cardName}`);
 
     });
-    
   });
+      
 });
 
 
