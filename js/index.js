@@ -75,9 +75,20 @@ window.addEventListener('load', event => {
         memoryGame.pickedCards.length = 0;
         };
         }, 1000);
+      
+    console.log(`Card clicked: ${card.dataset.cardName}`);
 
-      console.log(`Card clicked: ${card.dataset.cardName}`);
+    //on change le pairclicked
+    let pairClicked = document.getElementById('pairs-clicked');
+    let pairsGuessed = document.getElementById('pairs-guessed');
+    pairClicked.innerHTML = memoryGame.pairsClicked;
+    pairsGuessed.innerHTML = memoryGame.pairsGuessed;
 
+
+    //on vérifie si la partie est finie
+    if (memoryGame.isFinished()){
+      console.log('You win!!!');
+    };
     });
   });
       
