@@ -14,6 +14,7 @@ body {
   margin: 0px auto;
   border-radius: 84px;
   box-shadow: inset 0px 0px 20px -6px rgba(97, 89, 97, 1);
+  
 }
 
 .card {
@@ -94,4 +95,24 @@ p {
   font-weight: bolder;
   font-size: 20px;
   text-align: center;
+}
+
+
+
+
+.win{
+  background : url('../img/superhero-comic-4376194_1280.png') no-repeat;
+  background-size: cover;
+  width: 40vw;
+  height: 30vw;
+  position : absolute;
+  left: 30%;
+  top: 40%;
+  display: flex;
+}
+
+.win span{
+  font-size: 2.3em;
+  font-weight: bolder;
+  margin: auto;
 }

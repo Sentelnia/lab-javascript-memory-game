@@ -78,24 +78,21 @@ window.addEventListener('load', event => {
        pairClicked.innerHTML = memoryGame.pairsClicked;
        pairsGuessed.innerHTML = memoryGame.pairsGuessed;
         
+      //on vérifie si la partie est finie 
+       if (memoryGame.isFinished()){
+       let final = document.querySelector('.final-score');
+        final.setAttribute('class', 'win')
+        console.log('You win!!!');
+      };
        //on vide l'array 
         memoryGame.pickedCards.length = 0;
+
+        
         };
         }, 1000);
       
     console.log(`Card clicked: ${card.dataset.cardName}`);
 
-    //on change le pairclicked et le pairguessed
-    let pairClicked = document.getElementById('pairs-clicked');
-    let pairsGuessed = document.getElementById('pairs-guessed');
-    pairClicked.innerHTML = memoryGame.pairsClicked;
-    pairsGuessed.innerHTML = memoryGame.pairsGuessed;
-
-
-    //on vérifie si la partie est finie
-    if (memoryGame.isFinished()){
-      console.log('You win!!!');
-    };
     });
   });
       
