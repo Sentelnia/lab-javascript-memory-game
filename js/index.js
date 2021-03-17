@@ -71,6 +71,13 @@ window.addEventListener('load', event => {
         card.classList.toggle('turned', result);
         memoryGame.pickedCards[0].classList.toggle('turned', result);
 
+
+       //on change le pairclicked et le pairguessed
+       let pairClicked = document.getElementById('pairs-clicked');
+       let pairsGuessed = document.getElementById('pairs-guessed');
+       pairClicked.innerHTML = memoryGame.pairsClicked;
+       pairsGuessed.innerHTML = memoryGame.pairsGuessed;
+        
        //on vide l'array 
         memoryGame.pickedCards.length = 0;
         };
@@ -78,7 +85,7 @@ window.addEventListener('load', event => {
       
     console.log(`Card clicked: ${card.dataset.cardName}`);
 
-    //on change le pairclicked
+    //on change le pairclicked et le pairguessed
     let pairClicked = document.getElementById('pairs-clicked');
     let pairsGuessed = document.getElementById('pairs-guessed');
     pairClicked.innerHTML = memoryGame.pairsClicked;
